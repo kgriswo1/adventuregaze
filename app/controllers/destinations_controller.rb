@@ -1,6 +1,6 @@
 class DestinationsController < ApplicationController
     def index
-        destinations = Destination.all
+        destinations = Destination.all.sort_by {|dest| dest.location}
         render json: destinations
     end
 
